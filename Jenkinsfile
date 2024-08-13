@@ -1,10 +1,9 @@
 pipeline{
     agent any
-    stages{
-
         triggers {
         githubPush()
         }
+    stages{
         stage('Clone'){
             steps{
                 git 'https://github.com/Kaushiktelstra/PipelineActivity.git'
