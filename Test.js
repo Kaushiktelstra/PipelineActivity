@@ -1,5 +1,5 @@
 // test.js
-const LinkedList = require('./LinkedList');
+const LinkedList = require('./Item');
 
 function testLinkedList() {
     const list = new LinkedList();
