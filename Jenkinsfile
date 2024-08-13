@@ -1,19 +1,33 @@
-pipeline {
+pipeline{
     agent any
-    triggers {
+    stages{
+
+        triggers {
         githubPush()
-    }
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building...'
-                // Your build steps here
+        }
+        stage('Clone'){
+            steps{
+                git 'https://github.com/Kaushiktelstra/PipelineActivity.git'
             }
         }
-        stage('Test') {
-            steps {
-                echo 'Testing...'
-                // Your test steps here
+        stage('Build')
+        {
+            steps{
+                bat 'npm init'
+ 
+              
+            }
+        }
+        stage('Test')
+        {
+            steps{
+                bat 'node Test.js'
+            }
+        }
+        stage('Deploy')
+        {
+            steps{
+                bat 'node Item.js'
             }
         }
     }
